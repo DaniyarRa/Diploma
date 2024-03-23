@@ -61,6 +61,16 @@
             }
         }
 
+        function formatNumber(number, decimals) {
+            let roundedNumber = parseFloat(number.toFixed(decimals));
+            let strNumber = roundedNumber.toString();
+            if (roundedNumber === number) {
+                return number.toString(); // Leave as is
+            } else {
+                return strNumber; // Include the rounded decimal part
+            }
+        }
+
 
         var map = new google.maps.Map(document.getElementById('map'), {
             center: { lat: 43.25, lng: 76.835 },
@@ -79,7 +89,7 @@
                     { lat: j - step, lng: i + step },
                     { lat: j - step, lng: i }
                 ];
-                var color_value = data['(' + j.toFixed(step_decimal_len) + ', ' + i.toFixed(step_decimal_len) + ')']
+                var color_value = data['(' + formatNumber(j, step_decimal_len)  + ', ' + formatNumber(i, step_decimal_len) + ')']
 
                 if (color_value == null || color_value == undefined) {
                     color_value = 0;
