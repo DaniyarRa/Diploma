@@ -2,9 +2,9 @@ import pandas as pd
 import math
 def get_actual_crimininal_data(step):
     df = pd.read_excel('assets/crime_data.xlsx')
-
-    df['Latitude'] = df['Latitude'].apply(lambda x: (math.floor(x * (1 / step)) * step) + float(step))
-    df['Longitude'] = df['Longitude'].apply(lambda x: math.floor(x * (1 / step)) * step)
+    step_len = len(str(step).split('.')[1])
+    df['Latitude'] = df['Latitude'].apply(lambda x: round((math.floor(x * (1 / step)) * step) + float(step), step_len))
+    df['Longitude'] = df['Longitude'].apply(lambda x: round(math.floor(x * (1 / step)) * step, step_len))
 
     common_y_values = df.groupby('Crime Title')['Hard Code'].agg(lambda x: x.mode().iloc[0])
 
