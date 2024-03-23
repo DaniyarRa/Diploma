@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Заливка области на карте Google Maps</title>
+    <style>
+        #map { height: 700px; }
+    </style>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form }}
+        </table>
+        <input type="submit" value="Change">
+    </form>
+    <div id="map"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBK6pWesT48H7XFZQWNIEhzx4js5OYZ2o"></script>
+    <script>
+// JSON data containing coordinates (assuming it's passed from Django)
+        // Initialize Google Map
+        {#function getColor(value) {#}
+        {#    // Interpolate RGB values from green to red based on the value#}
+        {#    var r = Math.round(255 * value);#}
+        {#    var g = Math.round(255 * (1 - value));#}
+        {#    var b = 0;#}
+        {##}
+        {#    // Convert RGB values to hex format#}
+        {#    var hexColor = "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);#}
+        {##}
+        {#    return hexColor;#}
+        {#}#}
+
+        function getColor(value) {
+            if (value >= 0 && value < 0.2) {
+                return '#00FF00'; // Green
+            } else if (value >= 0.2 && value < 0.5) {
+                return '#FFFF00'; // Yellow
+            } else if (value >= 0.5 && value < 0.75) {
+                return '#FFA500'; // Orange
+            } else if (value >= 0.75) {
+                return '#FF0000'; // Red
+            }
+        }
+
+        function countDecimalPlaces(number) {
+            // Convert the number to a string
+            var numberString = number.toString();
+
+            // Check if the number has a decimal point
+            if (numberString.indexOf('.') !== -1) {
+                // Split the string into integer and decimal parts
+                var decimalPart = numberString.split('.')[1];
+
+                // Return the length of the decimal part
+                return decimalPart.length;
+            } else {
+                // If there's no decimal point, return 0
+                return 0;
+            }
+        }
+
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: 43.25, lng: 76.835 },
+            zoom: 12
+        });
+
+        var data = {{ data|safe }};
+        var step = {{ step }}
+
+        var step_decimal_len = countDecimalPlaces(step)
+        for (let i = 76.65; i < 77.13; i = i + step) {
+            for (let j = 43.42; j > 43.11; j = j - step) {
+                var contourCoordinates = [
+                    { lat: j, lng: i },
+                    { lat: j, lng: i + step },
+                    { lat: j - step, lng: i + step },
+                    { lat: j - step, lng: i }
+                ];
+                var color_value = data['(' + j.toFixed(step_decimal_len) + ', ' + i.toFixed(step_decimal_len) + ')']
+
+                if (color_value == null || color_value == undefined) {
+                    color_value = 0;
+                }
+
+                var contourPolygon = new google.maps.Polygon({
+                    paths: contourCoordinates,
+                    strokeColor: getColor(color_value),
+                    strokeOpacity: 0.1,
+                    strokeWeight: 0,
+                    fillColor: getColor(color_value),
+                    fillOpacity: 0.3
+                });
+                contourPolygon.setMap(map);
+            }
+        }
+    </script>
+</body>
+</html>
