@@ -1,0 +1,6 @@
+pandas
+datetime
+sqlalchemy
+django
+pathlib
+psycopg2-binary
