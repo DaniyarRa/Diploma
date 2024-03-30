@@ -22,4 +22,4 @@ COPY . /code/
 EXPOSE 8000
 
 # Run the Django development server
-CMD ["gunicorn", "--bind", "0.0.0.0:$PORT", "your_django_project.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:$PORT", "DiplomaProject_1.wsgi:application"]

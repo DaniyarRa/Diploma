@@ -8,5 +8,5 @@ services:
     environment:
       - PYTHONDONTWRITEBYTECODE=1
       - PYTHONUNBUFFERED=1
-    command: gunicorn --bind :$PORT main.wsgi:application
+    command: gunicorn --bind :$PORT DiplomaProject_1.wsgi:application
 
