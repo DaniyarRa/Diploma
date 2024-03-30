@@ -3,10 +3,11 @@ version: '3.8'
 services:
   web:
     build: .
+    ports:
+      - "8000:8000"
     volumes:
       - .:/code
     environment:
       - PYTHONDONTWRITEBYTECODE=1
       - PYTHONUNBUFFERED=1
-    command: gunicorn --bind :$PORT DiplomaProject_1.wsgi:application
-
+    command: python manage.py runserver 0.0.0.0:8000
