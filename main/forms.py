@@ -1,4 +1,4 @@
 from django import forms
 
 class StepForm(forms.Form):
-    Step = forms.ChoiceField(choices=[(0.0025, 0.0025), (0.005, 0.005), (0.01, 0.01)])
+    Step = forms.ChoiceField(choices=[(1, 0.0025), (2, 0.005), (3, 0.01)])

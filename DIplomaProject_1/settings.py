@@ -78,8 +78,15 @@ WSGI_APPLICATION = "DIplomaProject_1.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'diploma-db',
+        'USER': 'postgres',
+        'PASSWORD': '!1Qwerty1974@2',
+        'HOST': '35.205.69.113',
+        'PORT': '5432',
+        'OPTIONS': {
+            'options': '-c search_path=mart'
+        }
     }
 }
 

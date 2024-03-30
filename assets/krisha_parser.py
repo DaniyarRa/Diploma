@@ -1,7 +1,24 @@
-import json
-from openpyxl import load_workbook, Workbook
 import requests
 from datetime import datetime, timedelta
+from sqlalchemy import create_engine, Column, String, Integer, Date, Float, TIMESTAMP, func
+from sqlalchemy.orm import declarative_base
+from sqlalchemy.orm import sessionmaker
+
+Base = declarative_base()
+
+
+class CrimeRecord(Base):
+    __tablename__ = 'crime'
+    __table_args__ = {'schema': 'public'}
+
+    id = Column(Integer, primary_key=True)
+    date = Column(Date, nullable=False)
+    date_excitation = Column(Date)
+    crime_title = Column(String(256), nullable=False)
+    crime_level = Column(Integer)
+    latitude = Column(Float, nullable=False)
+    longitude = Column(Float, nullable=False)
+    created_at = Column(TIMESTAMP, default=func.now(), nullable=False)
 
 
 def fetch_and_parse_json(url):
@@ -16,34 +33,33 @@ def fetch_and_parse_json(url):
         return None
 
 
-def append_to_excel(data, from_date, filename):
+def save_to_database(data, from_date, session):
     if not data:
-        print("No data to append.")
+        print("No data to save.")
         return
-
-    try:
-        workbook = load_workbook(filename)
-        sheet = workbook.active
-    except FileNotFoundError:
-        workbook = Workbook()
-        sheet = workbook.active
-        sheet.append(["Date", "Date Excitation", "Crime Title", "Hard Code", "Latitude", "Longitude"])
-
+    print('data before db:', data)
     for crime in data:
-        sheet.append([
-            from_date,
-            crime["date_excitation"],
-            crime["crime_title"],
-            crime["hard_code"],
-            crime["location"]["lat"],
-            crime["location"]["lon"]
-        ])
+        record = CrimeRecord(
+            date=datetime.strptime(from_date, "%d.%m.%Y").date(),
+            date_excitation=datetime.strptime(crime["date_excitation"], "%d.%m.%Y").date() if crime[
+                "date_excitation"] else None,
+            crime_title=crime["crime_title"],
+            crime_level=crime["hard_code"],
+            latitude=float(crime["location"]["lat"]),
+            longitude=float(crime["location"]["lon"])
+        )
+        session.add(record)
 
-    workbook.save(filename)
-    print(f"Data appended to '{filename}' successfully.")
+    session.commit()
+    print("Data saved to database successfully.")
 
 
-def main(start_date, end_date, filename):
+def main(start_date, end_date, database_url):
+    engine = create_engine(database_url)
+    Base.metadata.create_all(engine)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
     base_url = "https://krisha.kz/ms/geodata/crime"
     params = {
         "bounds": "76.65060394531248,43.4253116907793,77.12026947265623,43.11019905275058",
@@ -62,13 +78,17 @@ def main(start_date, end_date, filename):
         url = f"{base_url}?{requests.compat.urlencode(params)}"
 
         crime_data = fetch_and_parse_json(url)
-        append_to_excel(crime_data, from_date, filename)
+        save_to_database(crime_data, from_date, session)
 
         start += delta
 
+    session.close()
 
-if __name__ == "__main__":
-    start_date = "01.09.2021"
-    end_date = datetime.now().strftime("%d.%m.%Y")
-    filename = "crime_data.xlsx"
-    main(start_date, end_date, filename)
+
+def init():
+    date = (datetime.now() - timedelta(days=1)).strftime("%d.%m.%Y")
+    database_url = "postgresql://postgres:%211Qwerty1974%402@35.205.69.113:5432/diploma-db"
+    main(date, date, database_url)
+
+
+init()
