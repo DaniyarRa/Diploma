@@ -26,7 +26,7 @@ GOOGLE_MAP_API_KEY = "AIzaSyBBK6pWesT48H7XFZQWNIEhzx4js5OYZ2o"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
