@@ -57,26 +57,23 @@ def get_actual_crimininal_data(step_id, step, session):
     df['crime_level'] = df.apply(lambda row: common_y_values[row['crime_title']] if row['crime_level'] == 0 else row['crime_level'], axis=1)
 
     df['date'] = pd.to_datetime(df['date'])
-    #, format='%d.%m.%Y'
 
     current_month = pd.Timestamp.now().month
 
-    df['slope'] = (df['date'].dt.year - pd.Timestamp.now().year) * 12 + df['date'].dt.month - current_month + 100
+    df['year'] = df['date'].dt.year
+    df['month'] = df['date'].dt.month
+
+    df['slope'] = (df['year'] - pd.Timestamp.now().year) * 12 + df['month'] - current_month + 100
     df['slope'] = df['slope'].apply(lambda x: 0 if x < 0 else x)
     df['score'] = df['crime_level'] * df['slope']
 
-    df = df[['latitude', 'longitude', 'score']].groupby(by=['latitude', 'longitude']).sum('score').reset_index()
+    df = (df[['latitude', 'longitude', 'year', 'month', 'score']].groupby(by=['latitude', 'longitude', 'year', 'month'])
+          .sum('score').reset_index())
 
-    #option 1
-    #ATTENTATION GIVE coef
-    #df['score'] = df['score'].apply(lambda x: math.sqrt(math.sqrt(x / 100)))
+    df = (df[['latitude', 'longitude', 'score']].groupby(by=['latitude', 'longitude'])
+          .mean('score').reset_index())
 
-    #min_score = df['score'].min()
-    #max_score = df['score'].max()
-    #df['score'] = (df['score'] - min_score) / (max_score - min_score)
-
-    #option 2
-    df['score'] = df['score'] / (step * 100)
+    df['score'] = df['score'] / (step * step * 10000)
     df['step_id'] = step_id
     df_dict = df.to_dict(orient='records')
     for row in df_dict:
