@@ -1,0 +1,1122 @@
+{
+    "meta": {
+        "api_version": "3.0.17747",
+        "code": 200,
+        "issue_date": "20240406"
+    },
+    "result": {
+        "items": [
+            {
+                "context": {},
+                "flags": {
+                    "photos": true
+                },
+                "geometry_id": "9430047374968589",
+                "id": "9429940000980517_wD7sll794AG23HA72AIGG0GGl15x8247G6G4448917B90828udcn56684J123G7G1J3567G5ygvpuv74272BA41232H1H3J6HHGJ1G7535796",
+                "is_advertising": false,
+                "lat": 43.244568,
+                "lon": 76.911239,
+                "match_type": 2,
+                "name": "Участковый пункт полиции №15 Алмалинского района",
+                "name_ex": {
+                    "primary": "Участковый пункт полиции №15 Алмалинского района",
+                    "short_name": "Алмалинский УПП №15"
+                },
+                "rubr": "53244",
+                "schedule": {
+                    "Fri": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Mon": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Sat": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Sun": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Thu": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Tue": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Wed": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "comment": "прием граждан: пн-пт 18:00-22:00"
+                },
+                "source_type": 2,
+                "timezone_offset": 300,
+                "type": "branch",
+                "vital": 1
+            },
+            {
+                "context": {},
+                "flags": {
+                    "photos": true
+                },
+                "geometry_id": "9430047375000599",
+                "id": "9429940000980588_wD7sll794AG23HA72AIGG0GGl15x8247G6G4448917B90899udcn56684J123G7G1J3567G5ygvpuv74272BA41232H2H3J6HHGJ1G7535794",
+                "is_advertising": false,
+                "lat": 43.252696,
+                "lon": 76.909704,
+                "match_type": 2,
+                "name": "Участковый пункт полиции №18 Алмалинского района",
+                "name_ex": {
+                    "primary": "Участковый пункт полиции №18 Алмалинского района",
+                    "short_name": "Алмалинский УПП №18"
+                },
+                "rubr": "53244",
+                "schedule": {
+                    "Fri": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Mon": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Sat": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Sun": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Thu": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Tue": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Wed": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "comment": "прием граждан: пн-пт 18:00-22:00"
+                },
+                "source_type": 2,
+                "timezone_offset": 300,
+                "type": "branch",
+                "vital": 1
+            },
+            {
+                "context": {},
+                "flags": {
+                    "photos": true
+                },
+                "geometry_id": "9430047374968666",
+                "id": "9429940000981124_wD7sll794AG23HA72AIGG0GGl15x8247G6G4448917B91435udcn56684J123G7G1J3567G5ygvpuv74272BA41232H3H3J6HHGJ1G75357d3",
+                "is_advertising": false,
+                "lat": 43.235739,
+                "lon": 76.902022,
+                "match_type": 2,
+                "name": "Участковый пункт полиции №55 Бостандыкского района",
+                "name_ex": {
+                    "legal_name": "ГУ УП Бостандыкского района г. Алматы",
+                    "primary": "Участковый пункт полиции №55 Бостандыкского района"
+                },
+                "rubr": "53244",
+                "schedule": {
+                    "Fri": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "21:00"
+                            }
+                        ]
+                    },
+                    "Mon": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "21:00"
+                            }
+                        ]
+                    },
+                    "Sat": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "21:00"
+                            }
+                        ]
+                    },
+                    "Sun": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "21:00"
+                            }
+                        ]
+                    },
+                    "Thu": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "21:00"
+                            }
+                        ]
+                    },
+                    "Tue": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "21:00"
+                            }
+                        ]
+                    },
+                    "Wed": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "21:00"
+                            }
+                        ]
+                    },
+                    "comment": "прием граждан: пн-пт 18:00-21:00"
+                },
+                "source_type": 2,
+                "timezone_offset": 300,
+                "type": "branch",
+                "vital": 1
+            },
+            {
+                "context": {},
+                "flags": {
+                    "photos": true
+                },
+                "geometry_id": "9430047374985691",
+                "id": "9429940000980515_wD7sll794AG23HA72AIGG0GGl15x8247G6G4448917B90826udcn56684J123G7G1J3567G5ygvpuv74272BA41232H4H3J6HHGJ1G75357Ae",
+                "is_advertising": false,
+                "lat": 43.240504,
+                "lon": 76.899596,
+                "match_type": 2,
+                "name": "Участковый пункт полиции №14 Алмалинского района",
+                "name_ex": {
+                    "primary": "Участковый пункт полиции №14 Алмалинского района",
+                    "short_name": "Алмалинский УПП №14"
+                },
+                "rubr": "53244",
+                "schedule": {
+                    "Fri": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "21:00"
+                            }
+                        ]
+                    },
+                    "Mon": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "21:00"
+                            }
+                        ]
+                    },
+                    "Sat": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "21:00"
+                            }
+                        ]
+                    },
+                    "Sun": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "21:00"
+                            }
+                        ]
+                    },
+                    "Thu": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "21:00"
+                            }
+                        ]
+                    },
+                    "Tue": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "21:00"
+                            }
+                        ]
+                    },
+                    "Wed": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "21:00"
+                            }
+                        ]
+                    },
+                    "comment": "прием граждан: пн-вс 18:00-21:00"
+                },
+                "source_type": 2,
+                "timezone_offset": 300,
+                "type": "branch",
+                "vital": 1
+            },
+            {
+                "context": {},
+                "flags": {
+                    "photos": true
+                },
+                "geometry_id": "9430047374984328",
+                "id": "9429940000980524_wD7sll794AG23HA72AIGG0GGl15x8247G6G4448917B90835udcn56684J123G7G1J3567G5ygvpuv74272BA41232H5H3J6HHGJ1G7535795",
+                "is_advertising": false,
+                "lat": 43.245885,
+                "lon": 76.892846,
+                "match_type": 2,
+                "name": "Участковый пункт полиции №16 Алмалинского района",
+                "name_ex": {
+                    "primary": "Участковый пункт полиции №16 Алмалинского района",
+                    "short_name": "Алмалинский УПП №16"
+                },
+                "rubr": "53244",
+                "schedule": {
+                    "Fri": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Mon": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Sat": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Sun": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Thu": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Tue": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Wed": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "comment": "прием граждан: пн-вс 18:00-22:00"
+                },
+                "source_type": 2,
+                "timezone_offset": 300,
+                "type": "branch",
+                "vital": 1
+            },
+            {
+                "context": {},
+                "flags": {
+                    "photos": true
+                },
+                "geometry_id": "9430047374966788",
+                "id": "9429940000980531_wD7sll794AG23HA72AIGG0GGl15x8247G6G4448917B90842udcn56684J123G7G1J3567G5ygvpuv74272BA41232H6H3J6HHGJ1G753577c",
+                "is_advertising": false,
+                "lat": 43.243118,
+                "lon": 76.927486,
+                "match_type": 2,
+                "name": "Участковый пункт полиции №17 Алмалинского района",
+                "name_ex": {
+                    "legal_name": "ГУ УП Алмалинского района г. Алматы",
+                    "primary": "Участковый пункт полиции №17 Алмалинского района"
+                },
+                "rubr": "53244",
+                "schedule": {
+                    "Fri": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Mon": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Sat": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Sun": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Thu": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Tue": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Wed": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "comment": "прием граждан: пн-пт 18:00-22:00"
+                },
+                "source_type": 2,
+                "timezone_offset": 300,
+                "type": "branch",
+                "vital": 1
+            },
+            {
+                "context": {},
+                "flags": {
+                    "photos": true
+                },
+                "geometry_id": "9430047374969288",
+                "id": "9429940000968066_wD7sll794AG23HA72AIGG0GGl15x8247G6G4448917B78377udcn56684J123G7G1J3567G5ygvpuv74272BA41232H7H3J6HHGJ1G753576B",
+                "is_advertising": false,
+                "lat": 43.229507,
+                "lon": 76.913861,
+                "match_type": 2,
+                "name": "Участковый пункт полиции №56 Бостандыкского района",
+                "name_ex": {
+                    "primary": "Участковый пункт полиции №56 Бостандыкского района",
+                    "short_name": "Бостандыкский УПП №56"
+                },
+                "rubr": "53244",
+                "schedule": {
+                    "Fri": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Mon": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Sat": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Sun": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Thu": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Tue": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Wed": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "comment": "прием граждан: пн-вс 18:00-22:00"
+                },
+                "source_type": 2,
+                "timezone_offset": 300,
+                "type": "branch",
+                "vital": 1
+            },
+            {
+                "context": {},
+                "flags": {
+                    "photos": true
+                },
+                "geometry_id": "9430047374981225",
+                "id": "9429940001074690_wD7sll794AG23HA72AIGG0GGl15x8247G6G44489172849A1udcn56684J123G7G1J3567G5ygvpuv74272BA41233H8H3J6HHGJ1G75357ed",
+                "is_advertising": false,
+                "lat": 43.230582,
+                "lon": 76.892875,
+                "match_type": 2,
+                "name": "Участковый пункт полиции №54 Бостандыкского района",
+                "name_ex": {
+                    "legal_name": "ГУ УП Бостандыкского района г. Алматы",
+                    "primary": "Участковый пункт полиции №54 Бостандыкского района"
+                },
+                "rubr": "53244",
+                "schedule": {
+                    "Fri": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Mon": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Sat": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Sun": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Thu": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Tue": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Wed": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "comment": "прием граждан: пн-пт 18:00-22:00"
+                },
+                "source_type": 2,
+                "timezone_offset": 300,
+                "type": "branch",
+                "vital": 1
+            },
+            {
+                "context": {},
+                "flags": {
+                    "photos": true
+                },
+                "geometry_id": "9430047375173186",
+                "id": "9429940000981204_wD7sll794AG23HA72AIGG0GGl15x8247G6G4448917B91515udcn56684J123G7G1J3567G5ygvpuv74272BA41232H9H3J6HHGJ1G753578e",
+                "is_advertising": false,
+                "lat": 43.228444,
+                "lon": 76.92562,
+                "match_type": 2,
+                "name": "Участковый пункт полиции №57 Бостандыкского района",
+                "name_ex": {
+                    "legal_name": "ГУ УП Бостандыкского района г. Алматы",
+                    "primary": "Участковый пункт полиции №57 Бостандыкского района"
+                },
+                "rubr": "53244",
+                "schedule": {
+                    "Fri": {
+                        "working_hours": [
+                            {
+                                "from": "08:00",
+                                "to": "21:00"
+                            }
+                        ]
+                    },
+                    "Mon": {
+                        "working_hours": [
+                            {
+                                "from": "08:00",
+                                "to": "21:00"
+                            }
+                        ]
+                    },
+                    "Sat": {
+                        "working_hours": [
+                            {
+                                "from": "08:00",
+                                "to": "21:00"
+                            }
+                        ]
+                    },
+                    "Sun": {
+                        "working_hours": [
+                            {
+                                "from": "08:00",
+                                "to": "21:00"
+                            }
+                        ]
+                    },
+                    "Thu": {
+                        "working_hours": [
+                            {
+                                "from": "08:00",
+                                "to": "21:00"
+                            }
+                        ]
+                    },
+                    "Tue": {
+                        "working_hours": [
+                            {
+                                "from": "08:00",
+                                "to": "21:00"
+                            }
+                        ]
+                    },
+                    "Wed": {
+                        "working_hours": [
+                            {
+                                "from": "08:00",
+                                "to": "21:00"
+                            }
+                        ]
+                    },
+                    "comment": "прием граждан: пн-вс 18:00-22:00"
+                },
+                "source_type": 2,
+                "timezone_offset": 300,
+                "type": "branch",
+                "vital": 1
+            },
+            {
+                "context": {},
+                "geometry_id": "9430047374982152",
+                "id": "9429940000980604_wD7sll794AG23HA72AIGG0GGl15x8247G6G4448917B90915udcn56684J123G7G1J3567G5ygvpuv74272BA41232HAH3J6HHGJ1G75357e6",
+                "is_advertising": false,
+                "lat": 43.249482,
+                "lon": 76.884077,
+                "match_type": 2,
+                "name": "Участковый пункт полиции №22 Алмалинского района",
+                "name_ex": {
+                    "primary": "Участковый пункт полиции №22 Алмалинского района",
+                    "short_name": "Алмалинский УПП №22"
+                },
+                "rubr": "53244",
+                "schedule": {
+                    "Fri": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Mon": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Sat": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Sun": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Thu": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Tue": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Wed": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "comment": "прием граждан: пн-вс 17:00-22:00"
+                },
+                "source_type": 2,
+                "timezone_offset": 300,
+                "type": "branch",
+                "vital": 1
+            },
+            {
+                "context": {},
+                "geometry_id": "9430047375049747",
+                "id": "9429940001178367_wD7sll794AG23HA72A4GGG0Gl15x8247G6G4448917388678udcn56684J123G7G1J56474Jygvpuv74272BA41233H21J3HHHGJH0I743772b",
+                "is_advertising": false,
+                "lat": 43.259418,
+                "lon": 76.884719,
+                "match_type": 2,
+                "name": "Участковый пункт полиции №1 Алатауского района",
+                "name_ex": {
+                    "primary": "Участковый пункт полиции №1 Алатауского района",
+                    "short_name": "Алатауский УПП №1"
+                },
+                "rubr": "53244",
+                "schedule": {
+                    "Fri": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Mon": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Sat": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Sun": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Thu": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Tue": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Wed": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "comment": "прием граждан: пн-вс 18:00-22:00"
+                },
+                "source_type": 2,
+                "timezone_offset": 300,
+                "type": "branch",
+                "vital": 1
+            },
+            {
+                "context": {},
+                "geometry_id": "9430047375020440",
+                "id": "9429940000977259_wD7sll794AG23HA72A4GGG0Gl15x8247G6G4448917B8756Audcn56684J123G7G1J56474Jygvpuv74272BA41232H22J3HHHGJH0I7437754",
+                "is_advertising": false,
+                "lat": 43.243765,
+                "lon": 76.936523,
+                "match_type": 2,
+                "name": "Участковый пункт полиции №26 Алмалинского района",
+                "name_ex": {
+                    "primary": "Участковый пункт полиции №26 Алмалинского района",
+                    "short_name": "Алмалинский УПП №26"
+                },
+                "rubr": "53244",
+                "schedule": {
+                    "Fri": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Mon": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Sat": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Sun": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Thu": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Tue": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Wed": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "comment": "прием граждан: пн-вс 18:00-22:00"
+                },
+                "source_type": 2,
+                "timezone_offset": 300,
+                "type": "branch",
+                "vital": 1
+            },
+            {
+                "context": {},
+                "flags": {
+                    "photos": true
+                },
+                "geometry_id": "9430047374973886",
+                "id": "9429940000981206_wD7sll794AG23HA72A4GGG0Gl15x8247G6G4448917B91517udcn56684J123G7G1J56474Jygvpuv74272BA41232H23J3HHHGJH0I7437734",
+                "is_advertising": false,
+                "lat": 43.235714,
+                "lon": 76.933119,
+                "match_type": 2,
+                "name": "Участковый пункт полиции №58 Бостандыкского района",
+                "name_ex": {
+                    "legal_name": "ГУ УП Бостандыкского района г. Алматы",
+                    "primary": "Участковый пункт полиции №58 Бостандыкского района"
+                },
+                "rubr": "53244",
+                "schedule": {
+                    "Fri": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Mon": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Sat": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Sun": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Thu": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Tue": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "Wed": {
+                        "working_hours": [
+                            {
+                                "from": "09:00",
+                                "to": "22:00"
+                            }
+                        ]
+                    },
+                    "comment": "прием граждан: пн-вс 18:00-22:00"
+                },
+                "source_type": 2,
+                "timezone_offset": 300,
+                "type": "branch",
+                "vital": 1
+            }
+        ],
+        "search_attributes": {
+            "ad_seed": "1712428200",
+            "cluster_zoom": 20,
+            "dgis_output_type": 2,
+            "dgis_project_id": "67",
+            "dgis_search_type": 2,
+            "drag_bound": [
+                {
+                    "latitude": 43.30784363112483,
+                    "longitude": 76.82403131483821
+                },
+                {
+                    "latitude": 43.181883445194835,
+                    "longitude": 76.82403131483821
+                },
+                {
+                    "latitude": 43.181883445194835,
+                    "longitude": 76.99637106851537
+                },
+                {
+                    "latitude": 43.30784363112483,
+                    "longitude": 76.99637106851537
+                }
+            ],
+            "fly_type": 0,
+            "has_geo_restriction": false,
+            "is_auto_open_best_result": false,
+            "is_confident_best_result": false,
+            "is_nearby_requested": false,
+            "is_partial": false,
+            "is_partial_result": false,
+            "is_remote_requested": false,
+            "out_viewport": [
+                {
+                    "latitude": 43.26140732006433,
+                    "longitude": 76.88147790035967
+                },
+                {
+                    "latitude": 43.22831975625534,
+                    "longitude": 76.88147790035967
+                },
+                {
+                    "latitude": 43.22831975625534,
+                    "longitude": 76.93892448299391
+                },
+                {
+                    "latitude": 43.26140732006433,
+                    "longitude": 76.93892448299391
+                }
+            ],
+            "query_context": [
+                {
+                    "dgis_rubrics": [],
+                    "group": 0,
+                    "is_from_query_text": false,
+                    "record_id": "53244",
+                    "table_name": "rubric",
+                    "token_mask": 0
+                }
+            ],
+            "query_with_parameters": "-- 1000 v vc dtd map l {_KZ} d {gis.v4} obj {rubric 53244} s {ExpandingSearcher} u 3617860970362712884 V 76.8814779,43.26140732,76.93892448,43.22831976 T {coordinates adm_div.district_area adm_div.settlement adm_div.division adm_div.city branch adm_div.place crossroad station.metro adm_div.region kilometer_road_sign road branch.deleted station building attraction adm_div.district street adm_div.living_area route parking} sft {coordinates adm_div.district_area adm_div.settlement adm_div.division adm_div.city branch adm_div.place crossroad station.metro adm_div.region kilometer_road_sign road branch.deleted station building attraction adm_div.district street adm_div.living_area route parking}",
+            "rtw_version": "b695b64a-b1b7-45e1-8757-ca444f3891a7",
+            "statistic_tags": "",
+            "unisearch_version": "7:12f1e84eac:7.75.0.35145",
+            "zoomin_bound": 0
+        },
+        "total": 13
+    }
+}
