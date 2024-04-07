@@ -48,6 +48,10 @@ def get_actual_crimininal_data(step_id, step, session):
         'longitude': item.longitude
     } for item in source_data])
 
+    df['date'] = pd.to_datetime(df['date'])
+
+    months_diff = (df['date'].max().year - df['date'].min().year) * 12 + (df['date'].max().month - df['date'].min().month)
+
     step_len = len(str(step).split('.')[1])
     df['latitude'] = df['latitude'].apply(lambda x: round((math.floor(x * (1 / step)) * step) + float(step), step_len))
     df['longitude'] = df['longitude'].apply(lambda x: round(math.floor(x * (1 / step)) * step, step_len))
@@ -55,37 +59,27 @@ def get_actual_crimininal_data(step_id, step, session):
     common_y_values = df.groupby('crime_title')['crime_level'].agg(lambda x: x.mode().iloc[0])
 
     df['crime_level'] = df.apply(lambda row: common_y_values[row['crime_title']] if row['crime_level'] == 0 else row['crime_level'], axis=1)
-
-    df['date'] = pd.to_datetime(df['date'])
-
-    current_month = pd.Timestamp.now().month
+    df['score'] = df['crime_level']
 
     df['year'] = df['date'].dt.year
     df['month'] = df['date'].dt.month
 
-    df['slope'] = (df['year'] - pd.Timestamp.now().year) * 12 + df['month'] - current_month + 100
-    df['slope'] = df['slope'].apply(lambda x: 0 if x < 0 else x)
-    df['score'] = df['crime_level'] * df['slope']
-
     df = (df[['latitude', 'longitude', 'year', 'month', 'score']].groupby(by=['latitude', 'longitude', 'year', 'month'])
-          .sum('score').reset_index())
-
-    df = (df[['latitude', 'longitude', 'score']].groupby(by=['latitude', 'longitude'])
           .mean('score').reset_index())
 
-    df['score'] = df['score'] / (step * step * 10000)
+    df = (df[['latitude', 'longitude', 'score']].groupby(by=['latitude', 'longitude'])
+          .sum('score').reset_index())
+
+    df['score'] = df['score'] / (step * step * months_diff)
     df['step_id'] = step_id
     df_dict = df.to_dict(orient='records')
     for row in df_dict:
         new_record = AreaScoringRecord(**row)
         session.add(new_record)
 
-    data = df.set_index(['latitude', 'longitude'])['score'].to_dict()
-    #print('data_in_scoring:', data)
+    return
 
-    return data
-
-def init(step):
+def init():
     database_url = "postgresql://postgres:%211Qwerty1974%402@35.205.69.113:5432/diploma-db"
 
     engine = create_engine(database_url)
@@ -93,16 +87,12 @@ def init(step):
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    step_1_data = get_actual_crimininal_data(1, 0.0025, session)
-    step_2_data = get_actual_crimininal_data(2, 0.005, session)
-    step_3_data = get_actual_crimininal_data(3, 0.01, session)
+    get_actual_crimininal_data(1, 0.0025, session)
+    get_actual_crimininal_data(2, 0.005, session)
+    get_actual_crimininal_data(3, 0.01, session)
 
     session.commit()
     session.close()
 
-    if step == 0.0025:
-        return step_1_data
-    elif step == 0.005:
-        return step_2_data
-    else:
-        return step_3_data
+init()
+
