@@ -10,6 +10,7 @@ class PoliceDepartment(Base):
     __table_args__ = {'schema': 'public'}
 
     id = Column(Integer, primary_key=True)
+    object_type = Column(String(256))
     name = Column(String(256), nullable=False)
     latitude = Column(Float, nullable=False)
     longitude = Column(Float, nullable=False)
@@ -19,6 +20,7 @@ class PoliceDepartment(Base):
 def save_to_database(data, session):
     for department in data:
         record = PoliceDepartment(
+            object_type='club',
             name=department["name"],
             latitude=float(department["lat"]),
             longitude=float(department["lon"])
