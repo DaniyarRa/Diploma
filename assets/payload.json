@@ -1,701 +1,80 @@
 {
-    "meta": {
-        "api_version": "3.0.17747",
-        "code": 200,
-        "issue_date": "20240407"
-    },
-    "result": {
-        "items": [
-            {
-                "context": {
-                    "stop_factors": [
-                        {
-                            "name": "Дресс-код",
-                            "tag": "night_club_details_dress_code",
-                            "type": "attribute"
-                        },
-                        {
-                            "name": "Фейсконтроль",
-                            "tag": "night_club_details_face_control",
-                            "type": "attribute"
-                        }
-                    ]
-                },
-                "flags": {
-                    "photos": true
-                },
-                "geometry_id": "9430047374968531",
-                "id": "70000001067389543_dlwcir794AG23H8301IG0GGGoaw5eq47G6G4458204948C65udcn56558J127G7G1J1A5J2J7exBuv7428241013384H1J3HHHG3H19594",
-                "is_advertising": false,
-                "lat": 43.239947,
-                "lon": 76.90355,
-                "match_type": 2,
-                "name": "Уят Емес, бар",
-                "name_ex": {
-                    "extension": "бар",
-                    "primary": "Уят Емес"
-                },
-                "reviews": {
-                    "general_rating": 2.2,
-                    "general_review_count": 269,
-                    "general_review_count_with_stars": 422,
-                    "is_reviewable": false,
-                    "is_reviewable_on_flamp": true,
-                    "items": [
-                        {
-                            "is_reviewable": true,
-                            "tag": "2gis_reviews"
-                        }
-                    ],
-                    "org_rating": 2.2,
-                    "org_review_count": 269,
-                    "org_review_count_with_stars": 422
-                },
-                "rubr": "173",
-                "schedule": {
-                    "Fri": {
-                        "working_hours": [
-                            {
-                                "from": "22:00",
-                                "to": "06:00"
-                            }
-                        ]
-                    },
-                    "Mon": {
-                        "working_hours": [
-                            {
-                                "from": "22:00",
-                                "to": "06:00"
-                            }
-                        ]
-                    },
-                    "Sat": {
-                        "working_hours": [
-                            {
-                                "from": "22:00",
-                                "to": "06:00"
-                            }
-                        ]
-                    },
-                    "Sun": {
-                        "working_hours": [
-                            {
-                                "from": "22:00",
-                                "to": "06:00"
-                            }
-                        ]
-                    },
-                    "Thu": {
-                        "working_hours": [
-                            {
-                                "from": "22:00",
-                                "to": "06:00"
-                            }
-                        ]
-                    },
-                    "Tue": {
-                        "working_hours": [
-                            {
-                                "from": "22:00",
-                                "to": "06:00"
-                            }
-                        ]
-                    },
-                    "Wed": {
-                        "working_hours": [
-                            {
-                                "from": "22:00",
-                                "to": "06:00"
-                            }
-                        ]
-                    }
-                },
-                "source_type": 2,
-                "timezone_offset": 300,
-                "type": "branch",
-                "vital": 1
-            },
-            {
-                "context": {
-                    "stop_factors": [
-                        {
-                            "name": "Дресс-код",
-                            "tag": "night_club_details_dress_code",
-                            "type": "attribute"
-                        },
-                        {
-                            "name": "Фейсконтроль",
-                            "tag": "night_club_details_face_control",
-                            "type": "attribute"
-                        },
-                        {
-                            "name": "Стриптиз-программы",
-                            "tag": "night_club_details_striptease_program",
-                            "type": "attribute"
-                        }
-                    ]
-                },
-                "flags": {
-                    "photos": true
-                },
-                "geometry_id": "9430047375023834",
-                "id": "9429940000799179_dlwcir794AG23HA72AI0GGGGoaw5eq47G6G44582049A948Audcn56558J127G7G1J76I5GJ7exBuv742824A41232H2H3J2HH0J27528",
-                "is_advertising": false,
-                "lat": 43.237406,
-                "lon": 76.894182,
-                "match_type": 2,
-                "name": "Пионерская правда, ночной диско-клуб",
-                "name_ex": {
-                    "extension": "ночной диско-клуб",
-                    "primary": "Пионерская правда"
-                },
-                "reviews": {
-                    "general_rating": 2.6,
-                    "general_review_count": 132,
-                    "general_review_count_with_stars": 177,
-                    "is_reviewable": false,
-                    "is_reviewable_on_flamp": true,
-                    "items": [
-                        {
-                            "is_reviewable": true,
-                            "tag": "2gis_reviews"
-                        }
-                    ],
-                    "org_rating": 2.6,
-                    "org_review_count": 132,
-                    "org_review_count_with_stars": 177
-                },
-                "rubr": "173",
-                "schedule": {
-                    "Fri": {
-                        "working_hours": [
-                            {
-                                "from": "20:00",
-                                "to": "05:00"
-                            }
-                        ]
-                    },
-                    "Mon": {
-                        "working_hours": [
-                            {
-                                "from": "20:00",
-                                "to": "05:00"
-                            }
-                        ]
-                    },
-                    "Sat": {
-                        "working_hours": [
-                            {
-                                "from": "20:00",
-                                "to": "05:00"
-                            }
-                        ]
-                    },
-                    "Sun": {
-                        "working_hours": [
-                            {
-                                "from": "20:00",
-                                "to": "05:00"
-                            }
-                        ]
-                    },
-                    "Thu": {
-                        "working_hours": [
-                            {
-                                "from": "20:00",
-                                "to": "05:00"
-                            }
-                        ]
-                    },
-                    "Tue": {
-                        "working_hours": [
-                            {
-                                "from": "20:00",
-                                "to": "05:00"
-                            }
-                        ]
-                    },
-                    "Wed": {
-                        "working_hours": [
-                            {
-                                "from": "20:00",
-                                "to": "05:00"
-                            }
-                        ]
-                    }
-                },
-                "source_type": 2,
-                "timezone_offset": 300,
-                "type": "branch",
-                "vital": 1
-            },
-            {
-                "context": {
-                    "stop_factors": [
-                        {
-                            "name": "Дресс-код",
-                            "tag": "night_club_details_dress_code",
-                            "type": "attribute"
-                        },
-                        {
-                            "name": "Фейсконтроль",
-                            "tag": "night_club_details_face_control",
-                            "type": "attribute"
-                        },
-                        {
-                            "name": "Стриптиз-программы",
-                            "tag": "night_club_details_striptease_program",
-                            "type": "attribute"
-                        }
-                    ]
-                },
-                "flags": {
-                    "photos": true
-                },
-                "geometry_id": "9430047374969076",
-                "id": "9429940000868655_dlwcir794AG23HA72AI0GGGGoaw5eq47G6G4458204A78966udcn56558J127G7G1J76I5GJ7exBuv742824A41232H3H3J2HH0J275h7",
-                "is_advertising": false,
-                "lat": 43.220694,
-                "lon": 76.892745,
-                "match_type": 2,
-                "name": "Жесть, рок-клуб",
-                "name_ex": {
-                    "extension": "рок-клуб",
-                    "primary": "Жесть"
-                },
-                "reviews": {
-                    "general_rating": 3.3,
-                    "general_review_count": 242,
-                    "general_review_count_with_stars": 397,
-                    "is_reviewable": false,
-                    "is_reviewable_on_flamp": true,
-                    "items": [
-                        {
-                            "is_reviewable": true,
-                            "tag": "2gis_reviews"
-                        }
-                    ],
-                    "org_rating": 3.3,
-                    "org_review_count": 242,
-                    "org_review_count_with_stars": 397
-                },
-                "rubr": "173",
-                "schedule": {
-                    "Fri": {
-                        "working_hours": [
-                            {
-                                "from": "21:00",
-                                "to": "05:00"
-                            }
-                        ]
-                    },
-                    "Sat": {
-                        "working_hours": [
-                            {
-                                "from": "21:00",
-                                "to": "05:00"
-                            }
-                        ]
-                    }
-                },
-                "source_type": 2,
-                "timezone_offset": 300,
-                "type": "branch",
-                "vital": 1
-            },
-            {
-                "context": {},
-                "flags": {
-                    "photos": true
-                },
-                "geometry_id": "9430047375031040",
-                "id": "70000001079973202_dlwcir794AG23H8301IG0GGGoaw5eq47G6G4458204BA7631udcn56558J127G7G1J1A5J2J7exBuv7428241013393H4J3HHHG3H195de",
-                "is_advertising": false,
-                "lat": 43.23858,
-                "lon": 76.914651,
-                "match_type": 2,
-                "name": "Millennial Space",
-                "name_ex": {
-                    "primary": "Millennial Space"
-                },
-                "reviews": {
-                    "general_rating": 4.5,
-                    "general_review_count": 102,
-                    "general_review_count_with_stars": 142,
-                    "is_reviewable": false,
-                    "is_reviewable_on_flamp": true,
-                    "items": [
-                        {
-                            "is_reviewable": true,
-                            "tag": "2gis_reviews"
-                        }
-                    ],
-                    "org_rating": 4.5,
-                    "org_review_count": 102,
-                    "org_review_count_with_stars": 142
-                },
-                "rubr": "173",
-                "schedule": {
-                    "Fri": {
-                        "working_hours": [
-                            {
-                                "from": "21:00",
-                                "to": "05:00"
-                            }
-                        ]
-                    },
-                    "Sat": {
-                        "working_hours": [
-                            {
-                                "from": "21:00",
-                                "to": "05:00"
-                            }
-                        ]
-                    }
-                },
-                "source_type": 2,
-                "timezone_offset": 300,
-                "type": "branch",
-                "vital": 1
-            },
-            {
-                "context": {
-                    "stop_factors": [
-                        {
-                            "name": "Дресс-код",
-                            "tag": "night_club_details_dress_code",
-                            "type": "attribute"
-                        },
-                        {
-                            "name": "Фейсконтроль",
-                            "tag": "night_club_details_face_control",
-                            "type": "attribute"
-                        }
-                    ]
-                },
-                "flags": {
-                    "photos": true
-                },
-                "geometry_id": "9430047375041872",
-                "id": "70000001066788967_dlwcir794AG23H8301IG0GGGoaw5eq47G6G4458204888BA7udcn56558J127G7G1J1A5J2J7exBuv7428241013388H5J3HHHG3H19561",
-                "is_advertising": false,
-                "lat": 43.225669,
-                "lon": 76.899623,
-                "match_type": 2,
-                "name": "TheXbar",
-                "name_ex": {
-                    "legal_name": "ИП Idrishop",
-                    "primary": "TheXbar"
-                },
-                "reviews": {
-                    "general_rating": 4.1,
-                    "general_review_count": 145,
-                    "general_review_count_with_stars": 257,
-                    "is_reviewable": false,
-                    "is_reviewable_on_flamp": true,
-                    "items": [
-                        {
-                            "is_reviewable": true,
-                            "tag": "2gis_reviews"
-                        }
-                    ],
-                    "org_rating": 4.1,
-                    "org_review_count": 145,
-                    "org_review_count_with_stars": 257
-                },
-                "rubr": "173",
-                "schedule": {
-                    "Fri": {
-                        "working_hours": [
-                            {
-                                "from": "22:00",
-                                "to": "06:00"
-                            }
-                        ]
-                    },
-                    "Mon": {
-                        "working_hours": [
-                            {
-                                "from": "22:00",
-                                "to": "06:00"
-                            }
-                        ]
-                    },
-                    "Sat": {
-                        "working_hours": [
-                            {
-                                "from": "22:00",
-                                "to": "06:00"
-                            }
-                        ]
-                    },
-                    "Sun": {
-                        "working_hours": [
-                            {
-                                "from": "22:00",
-                                "to": "06:00"
-                            }
-                        ]
-                    },
-                    "Thu": {
-                        "working_hours": [
-                            {
-                                "from": "22:00",
-                                "to": "06:00"
-                            }
-                        ]
-                    },
-                    "Tue": {
-                        "working_hours": [
-                            {
-                                "from": "22:00",
-                                "to": "06:00"
-                            }
-                        ]
-                    },
-                    "Wed": {
-                        "working_hours": [
-                            {
-                                "from": "22:00",
-                                "to": "06:00"
-                            }
-                        ]
-                    }
-                },
-                "source_type": 2,
-                "timezone_offset": 300,
-                "type": "branch",
-                "vital": 1
-            },
-            {
-                "context": {},
-                "flags": {
-                    "photos": true
-                },
-                "geometry_id": "70030076284953506",
-                "id": "70000001051300181_dlwcir794AG23H8301IG0GGGoaw5eq47G6G4458204340329udcn56558J127G7G1J1A5J2J7exBuv7428241013372H6J3HHHG3H19549",
-                "is_advertising": false,
-                "lat": 43.241593,
-                "lon": 76.893165,
-                "match_type": 2,
-                "name": "Bult, ночной клуб",
-                "name_ex": {
-                    "extension": "ночной клуб",
-                    "primary": "Bult"
-                },
-                "reviews": {
-                    "general_rating": 4.1,
-                    "general_review_count": 21,
-                    "general_review_count_with_stars": 47,
-                    "is_reviewable": false,
-                    "is_reviewable_on_flamp": true,
-                    "items": [
-                        {
-                            "is_reviewable": true,
-                            "tag": "2gis_reviews"
-                        }
-                    ],
-                    "org_rating": 4.1,
-                    "org_review_count": 21,
-                    "org_review_count_with_stars": 47
-                },
-                "rubr": "173",
-                "schedule": {
-                    "Fri": {
-                        "working_hours": [
-                            {
-                                "from": "21:00",
-                                "to": "05:00"
-                            }
-                        ]
-                    },
-                    "Sat": {
-                        "working_hours": [
-                            {
-                                "from": "20:00",
-                                "to": "04:00"
-                            }
-                        ]
-                    },
-                    "Wed": {
-                        "working_hours": [
-                            {
-                                "from": "19:00",
-                                "to": "01:00"
-                            }
-                        ]
-                    }
-                },
-                "source_type": 2,
-                "timezone_offset": 300,
-                "type": "branch",
-                "vital": 1
-            },
-            {
-                "context": {
-                    "stop_factors": [
-                        {
-                            "name": "Дресс-код",
-                            "tag": "night_club_details_dress_code",
-                            "type": "attribute"
-                        },
-                        {
-                            "name": "Фейсконтроль",
-                            "tag": "night_club_details_face_control",
-                            "type": "attribute"
-                        },
-                        {
-                            "name": "Стриптиз-программы",
-                            "tag": "night_club_details_striptease_program",
-                            "type": "attribute"
-                        }
-                    ]
-                },
-                "flags": {
-                    "photos": true
-                },
-                "geometry_id": "9430047375172111",
-                "id": "70000001045869210_dlwcir794AG23H8301IG0GGGoaw5eq47G6G4458204796C32udcn56558J127G7G1J1A5J2J7exBuv7428241013361H7J3HHHG3H195fg",
-                "is_advertising": false,
-                "lat": 43.248869,
-                "lon": 76.936761,
-                "match_type": 2,
-                "name": "Red Room Bar, бар",
-                "name_ex": {
-                    "extension": "бар",
-                    "primary": "Red Room Bar"
-                },
-                "reviews": {
-                    "general_rating": 3,
-                    "general_review_count": 185,
-                    "general_review_count_with_stars": 251,
-                    "is_reviewable": false,
-                    "is_reviewable_on_flamp": true,
-                    "items": [
-                        {
-                            "is_reviewable": true,
-                            "tag": "2gis_reviews"
-                        }
-                    ],
-                    "org_rating": 3,
-                    "org_review_count": 185,
-                    "org_review_count_with_stars": 251
-                },
-                "rubr": "173",
-                "schedule": {
-                    "Fri": {
-                        "working_hours": [
-                            {
-                                "from": "22:00",
-                                "to": "05:00"
-                            }
-                        ]
-                    },
-                    "Mon": {
-                        "working_hours": [
-                            {
-                                "from": "22:00",
-                                "to": "05:00"
-                            }
-                        ]
-                    },
-                    "Sat": {
-                        "working_hours": [
-                            {
-                                "from": "22:00",
-                                "to": "05:00"
-                            }
-                        ]
-                    },
-                    "Sun": {
-                        "working_hours": [
-                            {
-                                "from": "22:00",
-                                "to": "05:00"
-                            }
-                        ]
-                    },
-                    "Thu": {
-                        "working_hours": [
-                            {
-                                "from": "22:00",
-                                "to": "05:00"
-                            }
-                        ]
-                    }
-                },
-                "source_type": 2,
-                "timezone_offset": 300,
-                "type": "branch",
-                "vital": 1
-            }
+  "results": [
+    {
+      "layerId": 0,
+      "layerName": "D302:Возраст",
+      "displayFieldName": "RAYON",
+      "value": "Алатауский",
+      "attributes": {
+        "OBJECTID": "7278",
+        "RAYON": "Алатауский",
+        "NOTE": "ул.Аксункар (Самгау)-ул.Арычная (Самгау)-ул.Кокшокы (Самгау)-ул.Лесная (Самгау)",
+        "MARK": "0",
+        "LABEL": "295",
+        "COUNT": "36;38;37;48;45;50;41",
+        "SHAPE": "Полигон",
+        "SHAPE.AREA": "63013,005005",
+        "SHAPE.LEN": "1086,5498"
+      },
+      "geometryType": "esriGeometryPolygon",
+      "geometry": {
+        "rings": [
+          [
+            [
+              650588.79839999974,
+              4792414.5107000005
+            ],
+            [
+              650690.79260000028,
+              4792511.4210000001
+            ],
+            [
+              650739.72429999989,
+              4792569.2493999992
+            ],
+            [
+              650746.39680000022,
+              4792538.7465000004
+            ],
+            [
+              650816.29930000007,
+              4792448.5087000001
+            ],
+            [
+              650805.81400000025,
+              4792392.5866999999
+            ],
+            [
+              650775.31109999958,
+              4792353.1871000007
+            ],
+            [
+              650781.34810000006,
+              4792294.0877
+            ],
+            [
+              650739.56109999958,
+              4792218.8447999991
+            ],
+            [
+              650652.66390000004,
+              4792102.8090000004
+            ],
+            [
+              650581.80819999985,
+              4792254.6881000008
+            ],
+            [
+              650588.79839999974,
+              4792414.5107000005
+            ]
+          ]
         ],
-        "search_attributes": {
-            "ad_seed": "1712520900",
-            "cluster_zoom": 20,
-            "dgis_output_type": 2,
-            "dgis_project_id": "67",
-            "dgis_search_type": 2,
-            "drag_bound": [
-                {
-                    "latitude": 43.30283363588042,
-                    "longitude": 76.80924889765265
-                },
-                {
-                    "latitude": 43.16242238932598,
-                    "longitude": 76.80924889765265
-                },
-                {
-                    "latitude": 43.16242238932598,
-                    "longitude": 77.00132213644048
-                },
-                {
-                    "latitude": 43.30283363588042,
-                    "longitude": 77.00132213644048
-                }
-            ],
-            "fly_type": 0,
-            "has_geo_restriction": false,
-            "is_auto_open_best_result": false,
-            "is_confident_best_result": false,
-            "is_nearby_requested": false,
-            "is_partial": false,
-            "is_partial_result": false,
-            "is_remote_requested": false,
-            "out_viewport": [
-                {
-                    "latitude": 43.25145321904888,
-                    "longitude": 76.87327330958351
-                },
-                {
-                    "latitude": 43.213802806157524,
-                    "longitude": 76.87327330958351
-                },
-                {
-                    "latitude": 43.213802806157524,
-                    "longitude": 76.93729772450962
-                },
-                {
-                    "latitude": 43.25145321904888,
-                    "longitude": 76.93729772450962
-                }
-            ],
-            "query_context": [
-                {
-                    "dgis_rubrics": [],
-                    "group": 0,
-                    "is_from_query_text": false,
-                    "record_id": "173",
-                    "table_name": "rubric",
-                    "token_mask": 0
-                }
-            ],
-            "query_with_parameters": "-- 1000 v vc dtd map l {_KZ} d {gis.v4} obj {rubric 173} s {ExpandingSearcher} u 3617860970362712884 V 76.87327331,43.25145322,76.93729772,43.21380281 T {coordinates adm_div.district_area adm_div.settlement adm_div.division adm_div.city branch adm_div.place crossroad station.metro adm_div.region kilometer_road_sign road branch.deleted station building attraction adm_div.district street adm_div.living_area route parking} sft {coordinates adm_div.district_area adm_div.settlement adm_div.division adm_div.city branch adm_div.place crossroad station.metro adm_div.region kilometer_road_sign road branch.deleted station building attraction adm_div.district street adm_div.living_area route parking}",
-            "rtw_version": "f766f15f-04fc-4922-8d78-2aaac76f4b99",
-            "statistic_tags": "",
-            "unisearch_version": "7:12f1e84eac:7.75.0.35145",
-            "zoomin_bound": 0
-        },
-        "total": 7
+        "spatialReference": {
+          "wkid": 32643,
+          "latestWkid": 32643
+        }
+      }
     }
+  ]
 }

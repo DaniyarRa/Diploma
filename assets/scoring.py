@@ -50,7 +50,7 @@ def get_actual_crimininal_data(step_id, step, session):
 
     df['date'] = pd.to_datetime(df['date'])
 
-    months_diff = (df['date'].max().year - df['date'].min().year) * 12 + (df['date'].max().month - df['date'].min().month)
+    months_diff = (df['date'].max().year - df['date'].min().year) * 12 + (df['date'].max().month - df['date'].min().month) + 1
 
     step_len = len(str(step).split('.')[1])
     df['latitude'] = df['latitude'].apply(lambda x: round((math.floor(x * (1 / step)) * step) + float(step), step_len))
