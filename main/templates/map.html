@@ -3,7 +3,33 @@
 <head>
     <title>Заливка области на карте Google Maps</title>
     <style>
-        #map { height: 700px; }
+        #container {
+            display: flex;
+            position: relative;
+            overflow: hidden;
+        }
+        #info-container {
+            position: absolute;
+            left: -100%; /* Start outside the container */
+            top: 0;
+            height: 700px;
+            width: 10%;
+            background-color: #ffffff;
+            transition: left 1s ease-in-out;
+            z-index: 1;
+        }
+        #map-container {
+            flex: 2;
+            height: 700px;
+            width: 100%;
+            transition: margin-left 1s ease-in-out;
+            z-index: 0;
+            overflow: hidden;
+        }
+        #map {
+            height: 100%; /* Take full height of the map container */
+            width: 100%; /* Take full width of the map container */
+        }
     </style>
 </head>
 <body>
@@ -14,24 +40,15 @@
         </table>
         <input type="submit" value="Change">
     </form>
-    <div id="map"></div>
+    <container id="container">
+        <div id="info-container"></div>
+        <div id="map-container">
+            <div id="map"></div>
+        </div>
+    <container>
 
     <script src="https://maps.googleapis.com/maps/api/js?key={{ google_map_api_key }}"></script>
     <script>
-// JSON data containing coordinates (assuming it's passed from Django)
-        // Initialize Google Map
-        {#function getColor(value) {#}
-        {#    // Interpolate RGB values from green to red based on the value#}
-        {#    var r = Math.round(255 * value);#}
-        {#    var g = Math.round(255 * (1 - value));#}
-        {#    var b = 0;#}
-        {##}
-        {#    // Convert RGB values to hex format#}
-        {#    var hexColor = "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);#}
-        {##}
-        {#    return hexColor;#}
-        {#}#}
-
         function getColor(value) {
             if (value <= 1) {
                 return '#00FF00'; // Green
@@ -73,41 +90,80 @@
             }
         }
 
+        document.addEventListener('DOMContentLoaded', function () {
+            var infoContainer = document.getElementById('info-container');
+            var mapContainer = document.getElementById('map-container');
 
-        var map = new google.maps.Map(document.getElementById('map'), {
-            center: { lat: 43.2567, lng: 76.9286},
-            zoom: 12
-        });
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 43.2567, lng: 76.9286},
+                zoom: 12
+            });
 
-        var data = {{ data|safe }};
-        var step = {{ step }}
+            mapContainer.addEventListener('mousedown', function (event) {
+                clickTime = new Date().getTime(); // Record the time of mousedown event
+            });
 
-        var step_decimal_len = countDecimalPlaces(step)
-        for (let i = 76.65; i < 77.13; i = i + step) {
-            for (let j = 43.42; j > 43.11; j = j - step) {
-                var contourCoordinates = [
-                    { lat: j, lng: i },
-                    { lat: j, lng: i + step },
-                    { lat: j - step, lng: i + step },
-                    { lat: j - step, lng: i }
-                ];
-                var color_value = data['(' + formatNumber(j, step_decimal_len)  + ', ' + formatNumber(i, step_decimal_len) + ')']
+            // Listen for mouseup event on the map container
+            mapContainer.addEventListener('mouseup', function (event) {
+                var releaseTime = new Date().getTime(); // Record the time of mouseup event
+                var clickDuration = releaseTime - clickTime; // Calculate the click duration
 
-                if (color_value == null || color_value == undefined) {
-                    color_value = 0;
+                if (clickDuration < 100) { // Check if click duration is less than 300 milliseconds (short click)
+                    // Slide in the info container smoothly
+                    infoContainer.style.left = '0'; // Move to the right (inside the container)
+
+                    // Adjust the map container's left margin to make space for info-container
+                    mapContainer.style.marginLeft = '10%'; // Set left margin to info-container width
                 }
+            });
+            infoContainer.addEventListener('click', function () {
+                infoContainer.style.left = '-100%';
+                mapContainer.style.marginLeft = '0';
+            });
 
-                var contourPolygon = new google.maps.Polygon({
-                    paths: contourCoordinates,
-                    strokeColor: getColor(color_value),
-                    strokeOpacity: 0.1,
-                    strokeWeight: 0,
-                    fillColor: getColor(color_value),
-                    fillOpacity: 0.3
-                });
-                contourPolygon.setMap(map);
+            function updateInfoContent(content) {
+                infoContainer.innerHTML = content;
             }
-        }
+
+            var data = {{ data|safe }};
+            var step = {{ step }}
+
+            var step_decimal_len = countDecimalPlaces(step)
+            for (let i = 76.65; i < 77.13; i = i + step) {
+                for (let j = 43.42; j > 43.11; j = j - step) {
+                    var contourCoordinates = [
+                        { lat: j, lng: i },
+                        { lat: j, lng: i + step },
+                        { lat: j - step, lng: i + step },
+                        { lat: j - step, lng: i }
+                    ];
+                    var color_value = data['(' + formatNumber(j, step_decimal_len)  + ', ' + formatNumber(i, step_decimal_len) + ')']
+
+                    if (color_value == null || color_value == undefined) {
+                        color_value = 0;
+                    }
+
+                    var contourPolygon = new google.maps.Polygon({
+                        paths: contourCoordinates,
+                        strokeColor: getColor(color_value),
+                        strokeOpacity: 0.1,
+                        strokeWeight: 0,
+                        fillColor: getColor(color_value),
+                        fillOpacity: 0.3
+                    });
+                    contourPolygon.setMap(map);
+
+                    contourPolygon.addListener('click', function(event) {
+                        var infoContent = 'Latitude: ' + event.latLng.lat().toFixed(4) +
+                                          '<br>Longitude: ' + event.latLng.lng().toFixed(4) +
+                                          '<br>Color Value: ' + color_value;
+
+                        // Create and display the info popup
+                        updateInfoContent(infoContent);
+                    });
+                }
+            }
+        });
     </script>
 </body>
 </html>
