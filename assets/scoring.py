@@ -36,8 +36,34 @@ class AreaScoringRecord(Base):
         {'schema': 'mart'}
     )
 
+class AreaPopulationRecord(Base):
+    __tablename__ = 'area_population'
+    __table_args__ = {'schema': 'mart'}
+
+    id = Column(Integer, primary_key=True)
+    step_id = Column(Integer, nullable=False)
+    latitude = Column(Float, nullable=False)
+    longitude = Column(Float, nullable=False)
+    age0_15 = Column(Integer)
+    age16_25 = Column(Integer)
+    age26_35 = Column(Integer)
+    age36_45 = Column(Integer)
+    age46_55 = Column(Integer)
+    age56_65 = Column(Integer)
+    age66_100 = Column(Integer)
+    total = Column(Integer)
+    density = Column(Float)
+    created_at = Column(TIMESTAMP, default=func.now(), nullable=False)
+
+    __table_args__ = (
+        UniqueConstraint('step_id', 'latitude', 'longitude'),
+        {'schema': 'mart'}
+    )
+
+
 def get_actual_crimininal_data(step_id, step, session):
     source_data = session.query(CrimeRecord).all()
+    population_data = session.query(AreaPopulationRecord).filter(AreaPopulationRecord.step_id == step_id).all()
 
     df = pd.DataFrame([{
         'date': item.date,
@@ -47,6 +73,15 @@ def get_actual_crimininal_data(step_id, step, session):
         'latitude': item.latitude,
         'longitude': item.longitude
     } for item in source_data])
+
+    df2 = pd.DataFrame([{
+        'latitude': item.latitude,
+        'longitude': item.longitude,
+        'density': item.density
+    } for item in population_data])
+
+    mean_density = df2['density'].mean()
+    df2['density'].replace(0, mean_density, inplace=True)
 
     df['date'] = pd.to_datetime(df['date'])
 
@@ -70,8 +105,14 @@ def get_actual_crimininal_data(step_id, step, session):
     df = (df[['latitude', 'longitude', 'score']].groupby(by=['latitude', 'longitude'])
           .sum('score').reset_index())
 
-    df['score'] = df['score'] / (step * step * months_diff)
+    df = pd.merge(df, df2, on=['latitude', 'longitude'], how='left')
+    df['density'] = df['density'].fillna(mean_density)
+
+    df['score'] = df['score'] / (months_diff * df['density'] * step * step)
     df['step_id'] = step_id
+
+    df = df.drop('density', axis=1)
+
     df_dict = df.to_dict(orient='records')
     for row in df_dict:
         new_record = AreaScoringRecord(**row)
