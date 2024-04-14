@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Заливка области на карте Google Maps</title>
+    <title>Карта преступности</title>
     <style>
         #container {
-            display: flex;
+            display: none;
             position: relative;
             overflow: hidden;
         }
@@ -13,10 +13,12 @@
             left: -100%; /* Start outside the container */
             top: 0;
             height: 700px;
-            width: 10%;
+            width: 15%;
             background-color: #ffffff;
             transition: left 1s ease-in-out;
-            z-index: 1;
+            z-index: 10;
+            overflow-x: scroll; /* Allow horizontal scrolling */
+            white-space: nowrap; /* Prevent line breaks */
         }
         #map-container {
             flex: 2;
@@ -27,8 +29,8 @@
             overflow: hidden;
         }
         #map {
-            height: 100%; /* Take full height of the map container */
-            width: 100%; /* Take full width of the map container */
+            height: 100%;
+            width: 100%;
         }
     </style>
 </head>
@@ -40,15 +42,19 @@
         </table>
         <input type="submit" value="Change">
     </form>
-    <container id="container">
+    <div id="container">
         <div id="info-container"></div>
         <div id="map-container">
             <div id="map"></div>
         </div>
-    <container>
+    <div>
 
     <script src="https://maps.googleapis.com/maps/api/js?key={{ google_map_api_key }}"></script>
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('container').style.display = 'flex';
+        });
+
         function getColor(value) {
             if (value <= 1) {
                 return '#00FF00'; // Green
@@ -63,106 +69,101 @@
             }
         }
 
-        function countDecimalPlaces(number) {
-            // Convert the number to a string
-            var numberString = number.toString();
+        var infoContainer = document.getElementById('info-container');
+        var mapContainer = document.getElementById('map-container');
+        var mapOptions = {
+            panControl: true,
+            zoomControl: true,
+            mapTypeControl: true,
+            scaleControl: true,
+            streetViewControl: false,
+            overviewMapControl: true,
+            rotateControl: true
+        };
 
-            // Check if the number has a decimal point
-            if (numberString.indexOf('.') !== -1) {
-                // Split the string into integer and decimal parts
-                var decimalPart = numberString.split('.')[1];
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: 43.2567, lng: 76.9286},
+            zoom: 12,
+            options: mapOptions
+        });
 
-                // Return the length of the decimal part
-                return decimalPart.length;
-            } else {
-                // If there's no decimal point, return 0
-                return 0;
-            }
+        var data = {{ data|safe }};
+        var step = {{ step }}
+
+        for (var i = 0; i < data.length; i++) {
+            var lat = data[i].lat
+            var lon = data[i].lon
+            var score = data[i].score
+
+            var contourCoordinates = [
+                {lat: lat, lng: lon},
+                {lat: lat, lng: lon + step},
+                {lat: lat - step, lng: lon + step},
+                {lat: lat - step, lng: lon}
+            ];
+
+            var contourPolygon = new google.maps.Polygon({
+                paths: contourCoordinates,
+                strokeColor: getColor(score),
+                strokeOpacity: 0.1,
+                strokeWeight: 0,
+                fillColor: getColor(score),
+                fillOpacity: 0.3
+            });
+            contourPolygon.setMap(map);
         }
 
-        function formatNumber(number, decimals) {
-            let roundedNumber = parseFloat(number.toFixed(decimals));
-            let strNumber = roundedNumber.toString();
-            if (roundedNumber === number) {
-                return number.toString(); // Leave as is
-            } else {
-                return strNumber; // Include the rounded decimal part
-            }
-        }
+        var contourCoordinates = [
+            {lat: 43.42, lng: 76.65},
+            {lat: 43.42, lng: 77.13},
+            {lat: 43.11, lng: 77.13},
+            {lat: 43.11, lng: 76.65}
+        ];
 
-        document.addEventListener('DOMContentLoaded', function () {
-            var infoContainer = document.getElementById('info-container');
-            var mapContainer = document.getElementById('map-container');
+        var contourPolygon = new google.maps.Polygon({
+            paths: contourCoordinates,
+            strokeColor: '#ffffff',
+            strokeOpacity: 0,
+            strokeWeight: 0,
+            fillColor: '#ffffff',
+            fillOpacity: 0
+        });
+        contourPolygon.setOptions({ zIndex: 10000 });
+        contourPolygon.setMap(map);
 
-            var map = new google.maps.Map(document.getElementById('map'), {
-                center: { lat: 43.2567, lng: 76.9286},
-                zoom: 12
-            });
+        contourPolygon.addListener('click', function(event) {
+            infoContainer.innerHTML = 'Loading...';
+            infoContainer.style.left = '0';
+            mapContainer.style.marginLeft = '15%';
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '{% url "crime_details" %}?lat=' + event.latLng.lat().toFixed(4) +
+                               '&lon=' + event.latLng.lng().toFixed(4) + '&step=' + step);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        infoContainer.innerHTML = 'Committed Crimes:';
 
-            mapContainer.addEventListener('mousedown', function (event) {
-                clickTime = new Date().getTime(); // Record the time of mousedown event
-            });
+                        for (var i = 0; i < response.data.length; i++) {
+                            var item = response.data[i];
+                            var crimeTitle = item.crime_title;
+                            var crimeDate = item.date;
 
-            // Listen for mouseup event on the map container
-            mapContainer.addEventListener('mouseup', function (event) {
-                var releaseTime = new Date().getTime(); // Record the time of mouseup event
-                var clickDuration = releaseTime - clickTime; // Calculate the click duration
+                            var crimeDiv = document.createElement('div');
+                            crimeDiv.innerHTML = 'Crime Title: ' + crimeTitle + '<br>' +
+                                'Crime Date: ' + crimeDate + '<br><br>';
 
-                if (clickDuration < 100) { // Check if click duration is less than 300 milliseconds (short click)
-                    // Slide in the info container smoothly
-                    infoContainer.style.left = '0'; // Move to the right (inside the container)
-
-                    // Adjust the map container's left margin to make space for info-container
-                    mapContainer.style.marginLeft = '10%'; // Set left margin to info-container width
-                }
-            });
-            infoContainer.addEventListener('click', function () {
-                infoContainer.style.left = '-100%';
-                mapContainer.style.marginLeft = '0';
-            });
-
-            function updateInfoContent(content) {
-                infoContainer.innerHTML = content;
-            }
-
-            var data = {{ data|safe }};
-            var step = {{ step }}
-
-            var step_decimal_len = countDecimalPlaces(step)
-            for (let i = 76.65; i < 77.13; i = i + step) {
-                for (let j = 43.42; j > 43.11; j = j - step) {
-                    var contourCoordinates = [
-                        { lat: j, lng: i },
-                        { lat: j, lng: i + step },
-                        { lat: j - step, lng: i + step },
-                        { lat: j - step, lng: i }
-                    ];
-                    var color_value = data['(' + formatNumber(j, step_decimal_len)  + ', ' + formatNumber(i, step_decimal_len) + ')']
-
-                    if (color_value == null || color_value == undefined) {
-                        color_value = 0;
+                            infoContainer.appendChild(crimeDiv);
+                        }
                     }
-
-                    var contourPolygon = new google.maps.Polygon({
-                        paths: contourCoordinates,
-                        strokeColor: getColor(color_value),
-                        strokeOpacity: 0.1,
-                        strokeWeight: 0,
-                        fillColor: getColor(color_value),
-                        fillOpacity: 0.3
-                    });
-                    contourPolygon.setMap(map);
-
-                    contourPolygon.addListener('click', function(event) {
-                        var infoContent = 'Latitude: ' + event.latLng.lat().toFixed(4) +
-                                          '<br>Longitude: ' + event.latLng.lng().toFixed(4) +
-                                          '<br>Color Value: ' + color_value;
-
-                        // Create and display the info popup
-                        updateInfoContent(infoContent);
-                    });
                 }
-            }
+            };
+            xhr.send();
+        });
+
+        infoContainer.addEventListener('click', function () {
+            infoContainer.style.left = '-100%';
+            mapContainer.style.marginLeft = '0';
         });
     </script>
 </body>

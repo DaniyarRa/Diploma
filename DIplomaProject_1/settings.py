@@ -84,9 +84,6 @@ DATABASES = {
         'PASSWORD': '!1Qwerty1974@2',
         'HOST': '35.205.69.113',
         'PORT': '5432',
-        'OPTIONS': {
-            'options': '-c search_path=mart'
-        }
     }
 }
 

@@ -17,5 +17,18 @@ class AreaScoring(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        db_table = 'area_scoring'
+        db_table = '"mart"."area_scoring"'
         unique_together = (('step_id', 'latitude', 'longitude'),)
+
+class Crime(models.Model):
+    id = models.AutoField(primary_key=True)
+    date = models.DateField(null=False)
+    date_excitation = models.DateField()
+    crime_title = models.CharField(null=False)
+    crime_level = models.IntegerField()
+    latitude = models.FloatField(null=False)
+    longitude = models.FloatField(null=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = '"public"."crime"'
